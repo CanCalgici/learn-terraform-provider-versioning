@@ -13,7 +13,13 @@ resource "random_pet" "petname" {
 resource "aws_s3_bucket" "sample" {
   bucket = random_pet.petname.id
 
-  tags = {
+    tags = {
     public_bucket = false
   }
+}
+
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.sample.id
+  acl = "public-read"
+  
 }

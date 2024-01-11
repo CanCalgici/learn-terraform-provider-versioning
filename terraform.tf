@@ -8,7 +8,7 @@ terraform {
       name = "learn-terraform-provider-versioning"
     }
   }
-
+ 
   required_providers {
     random = {
       source  = "hashicorp/random"
